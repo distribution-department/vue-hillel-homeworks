@@ -1,26 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <CardComponent />
+    <img alt="Vue logo" src="./assets/logo.png">
+    <CardComponent title="hi" text="how are you?"/>
 </template>
 
 <script>
-  import CardComponent from "@/components/CardComponent";
+    import CardComponent from "@/components/CardComponent";
 
-export default {
-  name: 'App',
-  components: {
-    CardComponent
-  }
-}
+    export default {
+        name: 'App',
+        components: {
+            CardComponent
+        },
+        data() {
+            return {}
+        }
+    }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
 </style>
