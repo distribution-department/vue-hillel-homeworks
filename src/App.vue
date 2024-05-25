@@ -1,6 +1,6 @@
 <template>
     <img alt="Vue logo" src="./assets/logo.png">
-    <CardComponent title="hi" text="how are you?"/>
+    <card-component :title="ttl" :text="txt"/>
 </template>
 
 <script>
@@ -12,7 +12,10 @@
             CardComponent
         },
         data() {
-            return {}
+            return {
+                ttl: 'hi',
+                txt: 'how are you?'
+            }
         }
     }
 </script>
