@@ -1,19 +1,20 @@
 <template>
     <img alt="Vue logo" src="./assets/logo.png">
-    <progress-component :percentage="percentage"/>
+    <AlertComponent :type="alertType" :text="alertText"/>
 </template>
 
 <script>
-    import ProgressComponent from "@/components/ProgressComponent.vue";
+    import AlertComponent from "@/components/AlertComponent";
 
     export default {
         name: 'App',
         components: {
-            ProgressComponent,
+            AlertComponent
         },
         data() {
             return {
-                percentage: 40
+                alertType: 'warning',
+                alertText: 'what is love?'
             }
         }
     }
