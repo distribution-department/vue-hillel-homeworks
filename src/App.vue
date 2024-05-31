@@ -1,25 +1,21 @@
 <template>
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <definitions-component :definitions="definitions"/>
+    <progress-component :percentage="percentage"/>
 </template>
 
 <script>
-    import DefinitionsComponent from "@/components/DefinitionsComponent.jsx";
+    import ProgressComponent from "@/components/ProgressComponent.vue";
 
     export default {
         name: 'App',
+        components: {
+            ProgressComponent,
+        },
         data() {
             return {
-                definitions: [
-                    {dt: 'one', dd: 'two', id: 1},
-                    {dt: 'another term', dd: 'another description', id: 2},
-                ]
+                percentage: 40
             }
-        },
-        components: {
-            DefinitionsComponent
-        },
+        }
     }
 </script>
 
