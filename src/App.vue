@@ -1,22 +1,25 @@
 <template>
     <img alt="Vue logo" src="./assets/logo.png">
-    <card-component :title="ttl" :text="txt"/>
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <definitions-component :definitions="definitions"/>
 </template>
 
 <script>
-    import CardComponent from "@/components/CardComponent";
+    import DefinitionsComponent from "@/components/DefinitionsComponent.jsx";
 
     export default {
         name: 'App',
-        components: {
-            CardComponent
-        },
         data() {
             return {
-                ttl: 'hi',
-                txt: 'how are you?'
+                definitions: [
+                    {dt: 'one', dd: 'two', id: 1},
+                    {dt: 'another term', dd: 'another description', id: 2},
+                ]
             }
-        }
+        },
+        components: {
+            DefinitionsComponent
+        },
     }
 </script>
 
