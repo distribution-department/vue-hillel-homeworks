@@ -1,15 +1,15 @@
 <template>
-    <h1>Button group:</h1>
-    <BtnGroup/>
+    <h1>Carousel:</h1>
+    <carousel-element/>
 </template>
 
 <script>
-    import BtnGroup from './components/BtnGroup.vue'
+    import CarouselElement from './components/CarouselElement.vue'
 
     export default {
         name: 'App',
         components: {
-            BtnGroup
+            CarouselElement
         },
         data() {
             return {}
