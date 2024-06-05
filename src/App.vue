@@ -1,18 +1,26 @@
 <template>
-    <h1>Carousel:</h1>
-    <carousel-element/>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <CaruselComponent :links="imgLinks"/>
 </template>
 
 <script>
-    import CarouselElement from './components/CarouselElement.vue'
+    import CaruselComponent from './components/CaruselComponent.vue'
 
     export default {
         name: 'App',
         components: {
-            CarouselElement
+            CaruselComponent
         },
         data() {
-            return {}
+            return {
+                imgLinks: [
+                    {id: 1, link: 'one.jpg'},
+                    {id: 2, link: 'two.jpg'},
+                    {id: 3, link: 'three.jpg'},
+                    {id: 4, link: 'four.jpg'},
+                    {id: 5, link: 'five.jpg'},
+                ]
+            }
         }
     }
 </script>
@@ -24,5 +32,10 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
+        margin-top: 60px;
+    }
+
+    img {
+        max-width: 60px;
     }
 </style>
