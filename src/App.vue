@@ -1,18 +1,16 @@
 <template>
-    <h1>Button group:</h1>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <hr>
     <BtnGroup/>
 </template>
 
 <script>
-    import BtnGroup from './components/BtnGroup.vue'
+    import BtnGroup from "@/components/BtnGroup";
 
     export default {
         name: 'App',
         components: {
-            BtnGroup
-        },
-        data() {
-            return {}
+            BtnGroup,
         }
     }
 </script>
@@ -24,5 +22,11 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
+        margin-top: 60px;
     }
+
+    img{
+        max-width: 80px;
+    }
+
 </style>
