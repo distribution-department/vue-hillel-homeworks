@@ -1,13 +1,25 @@
 <template>
     <h1>Slider:</h1>
-    <div class="slider">
-        <div class="slider-container">
-            <img class="photo" v-for="link of links"
-                 :key="link.id"
-                 :src="require(`@/assets/pictures/${link.link}`)">
+
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+            <div class="carousel-item"
+                 v-for="(link, index) of links"
+                 :key="index"
+                 :class="{ active: isActive ===  index}">
+                <img alt="" class="d-block w-100" :src="require(`@/assets/pictures/${link.link}`)">
+            </div>
         </div>
-        <img class="left-arrow" src="../assets/left.png" alt="" @click="getPreviousSlide">
-        <img class="right-arrow" src="../assets/right.png" alt="" @click="getNextSlide">
+
+        <button class="carousel-control-prev" data-bs-target="#carousel" type="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Prev</span>
+        </button>
+        <button class="carousel-control-next" data-bs-target="#carousel" type="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </template>
 
@@ -21,21 +33,11 @@
             }
         },
         data() {
-            return {}
-        },
-        methods: {
-            getPreviousSlide() {
-                let container = document.querySelector('.slider-container');
-                container.prepend(container.lastElementChild);
-            },
-
-            getNextSlide() {
-                let container = document.querySelector('.slider-container');
-                container.style.left = '-500px';
-                container.append(container.firstElementChild);
-                container.style.left = '0';
+            return {
+                isActive: 0
             }
         },
+        methods: {},
     }
 </script>
 
@@ -48,55 +50,15 @@
         margin: 10px 0 10px;
     }
 
-    .slider {
+    .carousel {
         width: 500px;
-        height: 281px;
         margin: 0 auto;
-        position: relative;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        overflow: hidden;
         border-radius: 10px;
-    }
-
-    .left-arrow {
-        width: 70px;
-        height: 70px;
-        position: absolute;
-        left: 10px;
-        top: calc(50% - 35px);
-        cursor: pointer;
-        transition-duration: 300ms;
-        opacity: 0.5;
-    }
-
-    .right-arrow {
-        width: 70px;
-        height: 70px;
-        position: absolute;
-        right: 10px;
-        top: calc(50% - 35px);
-        cursor: pointer;
-        transition-duration: 300ms;
-        opacity: 0.5;
-    }
-
-    .left-arrow:hover, .right-arrow:hover {
-        transform: scale(1.1);
-        opacity: 1;
-    }
-
-    .slider-container {
-        width: 1000px;
-        font-size: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        overflow: hidden;
     }
 
     img {
         max-width: 500px;
     }
-</style>
+</style>`
