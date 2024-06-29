@@ -1,33 +1,41 @@
 <template>
-    <img alt="Vue logo" style="width: 70px" src="./assets/logo.png">
-    <h1 class="mt-2">Collapse component:</h1>
-    <collapse-element :text="text" :opened="opened"/>
+    <ToDoList
+            :tasks="tasks"
+            @get-element="getNewElement"
+            @delete-element="deleteElement"
+    />
 </template>
 
 <script>
-    import CollapseElement from "@/components/CollapseElement";
+
+    import ToDoList from "./components/ToDoList.vue";
+    import storage from "./functions/LocalStor.js"
 
     export default {
-        name: 'App',
         components: {
-            CollapseElement,
+            ToDoList
         },
         data() {
             return {
-                text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum quia, vero. Accusantium adipisci aperiam assumenda autem debitis, dolore eius error est expedita, inventore ipsam minus mollitia neque porro quas quo sed sequi velit, veniam voluptatum. Ad aperiam consequatur consequuntur esse, et nisi optio quaerat repellendus sit soluta sunt velit vero?',
-                opened: true,
+                tasks: []
             }
+        },
+        methods: {
+            getNewElement(task) {
+                this.tasks.push(storage.addNewTask(task));
+            },
+            deleteElement(data) {
+                storage.deleteTask(data);
+                this.tasks.splice(data.ind, 1);
+            }
+        },
+        created() {
+            this.tasks = [...storage.getAllData()];
+
         }
     }
 </script>
 
-<style>
-    #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 60px;
-    }
+<style scoped>
+
 </style>
