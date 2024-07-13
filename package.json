@@ -1,5 +1,5 @@
 {
-  "name": "homework_17",
+  "name": "vite-routing",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,16 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "element-plus": "^2.7.6",
-    "unplugin-element-plus": "^0.8.0",
+    "jquery": "^3.7.1",
+    "materialize": "^1.0.0",
+    "materialize-css": "^1.0.0-rc.2",
+    "sweetalert2": "^11.12.2",
     "vue": "^3.4.29",
-    "yup": "^1.4.0"
+    "vue-router": "^4.4.0"
   },
   "devDependencies": {
-    "@element-plus/icons-vue": "^2.3.1",
     "@vitejs/plugin-vue": "^5.0.5",
-    "unplugin-auto-import": "^0.17.6",
-    "unplugin-vue-components": "^0.27.1",
     "vite": "^5.3.1"
   }
 }

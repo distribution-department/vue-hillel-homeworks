@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
-import 'element-plus/es/components/message/style/css'
-import ElementPlus from 'element-plus'
+import './style.css'
 import App from './App.vue'
+import router from "./router";
 
-const app = createApp(App)
-app.use(ElementPlus, { size: 'small', zIndex: 3000 })
+import 'materialize-css/dist/css/materialize.min.css'
+import 'materialize-css/dist/js/materialize.min'
 
-app.mount('#app')
+createApp(App).use(router).mount('#app')
